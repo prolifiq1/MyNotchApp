@@ -12,7 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupNotchPanel()
     }
 
-    private func setupNotchPanel() {
+    @MainActor private func setupNotchPanel() {
         guard let screen = NSScreen.main else { return }
 
         // Panel dimensions — sized to sit around the notch
