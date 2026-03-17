@@ -2,75 +2,54 @@
 
 A macOS notch companion that monitors your Claude Code sessions with animated pixel art mascots.
 
-## Download
+[![Download](https://img.shields.io/badge/download-MyNotchApp_v1.0.0-0075FF?style=flat-square&logo=apple&logoColor=white)](https://github.com/prolifiq1/MyNotchApp/releases/download/v1.0.0/MyNotchApp-1.0.dmg)
+[![macOS](https://img.shields.io/badge/macOS-15%2B-lightgrey?style=flat-square&logo=apple&logoColor=white)](https://github.com/prolifiq1/MyNotchApp/releases)
+[![License](https://img.shields.io/badge/license-MIT-0075FF?style=flat-square)](LICENSE)
 
-**[MyNotchApp-1.0.dmg](https://github.com/prolifiq1/MyNotchApp/releases/download/v1.0.0/MyNotchApp-1.0.dmg)** — macOS 15+, Apple Silicon
+---
 
-> First launch: right-click → Open to bypass Gatekeeper.
+## What is MyNotchApp?
 
-## Features
+MyNotchApp lives in your MacBook's notch and keeps you updated on what Claude Code is doing. It shows:
 
-- **Pixel art mascots** — 6 characters rendered via SwiftUI Canvas
-- **Session monitoring** — detects active Claude Code sessions
-- **Shimmer progress** — animated highlight on the status pill
-- **Menu bar integration** — quick status view + settings
+- **Animated pixel art mascots** — choose from 6 characters that react to session state
+- **Session status** — see when Claude is processing, waiting for input, or idle
+- **Shimmer progress** — a glassy traveling highlight shows active work
+- **Menu bar integration** — quick status view and settings from the menu bar
 - **Theme colours** — 6 presets to personalise the notch UI
+
+## Install
+
+1. [Download MyNotchApp-1.0.dmg](https://github.com/prolifiq1/MyNotchApp/releases/download/v1.0.0/MyNotchApp-1.0.dmg)
+2. Open the DMG and drag **MyNotchApp** to Applications
+3. Launch MyNotchApp — it appears in your notch
+4. Right-click → Open on first launch to bypass Gatekeeper
 
 ## Requirements
 
-- macOS 15.0+
-- Apple Silicon Mac with notch display
-- Xcode 16+
-- Claude Code CLI (for session monitoring)
+- macOS 15.0 or later
+- Apple Silicon Mac with a notch display
+- Claude Code CLI installed
 
-## Build & Run
+## Built With
 
-### With Xcode
+- SwiftUI + AppKit
+- Canvas API for pixel art rendering
+- NSPanel for the notch overlay
+
+## Build from Source
 
 ```bash
-open Package.swift
-# Xcode opens → select "My Mac" target → Cmd+R
+git clone https://github.com/prolifiq1/MyNotchApp.git
+cd MyNotchApp
+open MyNotchApp.xcodeproj
 ```
 
-### With Swift CLI
+Or via command line:
 
 ```bash
 swift build
 swift run MyNotchApp
-```
-
-### With Claude Code
-
-```bash
-cd MyNotchApp
-claude
-> Build and run this project, fix any errors
-```
-
-## Project Structure
-
-```
-Sources/MyNotchApp/
-├── MyNotchAppApp.swift      # App entry point (MenuBarExtra)
-├── AppDelegate.swift         # Creates the notch overlay panel
-├── NotchPanel.swift          # NSPanel subclass (transparent, non-activating)
-├── NotchContentView.swift    # SwiftUI view inside the notch
-├── PixelArtCanvas.swift      # Canvas-based 8×8 sprite renderer
-├── MascotSprites.swift       # Pixel grid data for each mascot
-├── SessionMonitor.swift      # Polls for active Claude Code sessions
-├── MenuBarView.swift         # Menu bar dropdown
-└── SettingsView.swift        # Mascot + theme preferences
-```
-
-## Claude Code Workflow
-
-This project was scaffolded and iterated with Claude Code:
-
-```bash
-claude
-> Add notification sounds when Claude Code status changes
-> Add a DMG packaging script for releases
-> Fix the panel positioning on external displays
 ```
 
 ## License
