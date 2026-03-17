@@ -2,6 +2,12 @@
 
 A macOS notch companion that monitors your Claude Code sessions with animated pixel art mascots.
 
+## Download
+
+**[MyNotchApp-1.0.dmg](https://github.com/prolifiq1/MyNotchApp/releases/download/v1.0.0/MyNotchApp-1.0.dmg)** — macOS 15+, Apple Silicon
+
+> First launch: right-click → Open to bypass Gatekeeper.
+
 ## Features
 
 - **Pixel art mascots** — 6 characters rendered via SwiftUI Canvas
